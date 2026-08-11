@@ -9,7 +9,7 @@
 #define DHTTYPE         DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-const char* mqtt_server   = "server_IP"; 
+const char* mqtt_server   = "debian.local"; 
 const int   mqtt_port     = 1883;
 const char* mqtt_topic    = "infrastructure/telemetry/node_01";
 
@@ -24,7 +24,7 @@ const long interval       = 2000;
 WiFiClient ethClient;
 PubSubClient client(ethClient);
 
-// Ethernet cable's connection
+// Ethernet connection
 void WiFiEvent(WiFiEvent_t event) {
   switch (event) {
     case SYSTEM_EVENT_ETH_START:
